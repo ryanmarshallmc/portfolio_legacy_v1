@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+# commenting out to test gh pages deploy
+#/build
 
 # misc
 .DS_Store
