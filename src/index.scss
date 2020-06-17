@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Charter:100,300,400,700,900|Rubik:100,200,300,400,500,600,700,800,900&display=swap");
+
+$accent: #feb92c;
+$primary: #4342b0;
+$secondary: #978ee9;
+$subtle: #dce2f8;
+$base: #ffffff;
+$background: #25284b;
+$transparent: rgba(0, 0, 0, 0);
+$spire: #3fbfad;
+$foood: #20205d;
+$accompani: #b80f42;
+$resilient: #ed1b24;
+$mobile: 600px;
+
+$font_header: "Rubik", sans-serif;
+$font_body: "Rubik", sans-serif;
+
+$border_radius_base: 8px;
+$border_radius_large: 16px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#App {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 264vw;
+  height: calc(300vh - 24px);
+  background: $background;
+  opacity: 0;
+  animation: fade-in 1s forwards ease;
+  animation-delay: 1s;
+
+  @media (max-width: $mobile) {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font_body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  transition: all 0.32s ease;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: $font_header;
+  font-weight: 900;
+  color: $base;
+  font-size: 4em;
+  line-height: 0.8;
+}
+
+h2 {
+  font-size: 2.4em;
+  margin: 0;
+  color: $base;
+  text-shadow: 4px 4px 0px $secondary;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+h4 {
+  color: $secondary;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: $secondary;
+}
+
+button {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 16px;
+  background: $primary;
+  color: $base;
+  font-family: $font_body;
+  font-size: 18px;
+  font-weight: 400;
+  border: 0;
+  border-radius: $border_radius_base;
+
+  &:before {
+    content: "> ";
+  }
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    transition: all 0.24s ease;
+    box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  @media (max-width: $mobile) {
+    padding: 12px 32px;
+    font-size: 24px;
+  }
+}
+
+.ModalButton {
+  background: $transparent;
+  border: 4px solid $base;
+  font-weight: 700;
+  color: $base;
+  &:hover {
+    background: $primary;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// @import url("https://fonts.googleapis.com/css?family=Charter:100,300,400,700,900|Rubik:100,200,300,400,500,600,700,800,900&display=swap");
+// $background: #382962;
+// $lowlight: #6f57ba;
+// $primary: #fff743;
+// $highlight: #b0e6ff;
+// $text: #fff;
+// $mobile: 600px;
+
+// body {
+//   margin: 0;
+//   width: 100vw;
+//   font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+//     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+//     sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   background: $background;
+//   color: $text;
+//   text-align: center;
+// }
+
+// * {
+//   box-sizing: border-box;
+//   transition: all 0.32s ease;
+// }
+
+// #App {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow-y: auto;
+//   max-width: 1000px;
+//   position: relative;
+//   padding: 84px 16px 0 16px;
+//   animation: fade-in 1s forwards ease;
+// }
+
+// .fading {
+//   animation: fade-out 0.32s forwards ease !important;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   color: $primary;
+// }
+
+// a {
+//   color: $highlight;
+//   cursor: pointer;
+//   font-weight: 500;
+// }
+
+// h1 {
+//   position: relative;
+//   font-size: 48px;
+//   font-weight: 900;
+//   @media (max-width: $mobile) {
+//     font-size: 36px;
+//   }
+// }
+
+// h2 {
+//   position: relative;
+//   font-size: 32px;
+//   font-weight: 900;
+//   color: $text;
+//   margin: 0 0 48px 0;
+//   z-index: 1;
+
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     background: $primary;
+//     bottom: -16px;
+//     left: 0;
+//     width: 56px;
+//     height: 6px;
+//   }
+// }
+
+// button {
+//   background: rgba(0, 0, 0, 0);
+//   padding: 16px 32px;
+//   border-radius: 8px;
+//   border: 4px solid $primary;
+//   color: $primary;
+//   font-weight: 700;
+//   font-size: 18px;
+//   margin: 16px 0;
+//   font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+//     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+//     sans-serif;
+// }
+
+// strong {
+//   font-weight: 900;
+//   color: $primary;
+// }
+
+// p {
+//   line-height: 1.6;
+//   font-weight: 400;
+//   font-size: 16px;
+//   @media (max-width: $mobile) {
+//     font-size: 16px;
+//   }
+// }
+
+// @keyframes fade-in {
+//   from {
+//     transform: translateX(-16px);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes fade-out {
+//   from {
+//     transform: translateX(0);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: translateX(-16px);
+//     opacity: 0;
+//   }
+// }
+
+// ==========

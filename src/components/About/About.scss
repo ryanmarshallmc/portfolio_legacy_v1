@@ -1,0 +1,130 @@
+@import "../../index.scss";
+
+#About {
+  @include flex-center;
+  flex-direction: column;
+  background: $secondary;
+  position: absolute;
+  top: 96px;
+  left: 64px;
+  width: 76vw;
+  height: 164vh;
+  padding-bottom: calc(64vh + 120px);
+  border-radius: $border_radius_large;
+  opacity: 0;
+  animation: fade-in 1s ease 5.4s forwards;
+  box-shadow: 0px 32px 32px 0 rgba(0, 0, 0, 0.48);
+
+  @media (max-width: $mobile) {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    padding: 0 16px 32px 16px;
+    box-shadow: none;
+  }
+
+  > h1 {
+    position: absolute;
+    top: -120px;
+    padding: 0 32px;
+    text-align: left;
+    width: 100%;
+    @media (max-width: $mobile) {
+      position: relative;
+      top: auto;
+      left: auto;
+      padding: 0;
+    }
+  }
+
+  > div {
+    @include flex-center;
+    align-items: flex-start;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  #AboutButtons {
+    position: absolute;
+    flex-direction: column;
+    right: -124px;
+    top: 24%;
+
+    button {
+      width: 160px;
+      margin: 8px 0;
+    }
+  }
+
+  .Person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 64px;
+
+    a {
+      text-decoration: none;
+      color: $primary;
+      font-weight: 900;
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+      padding: 16px 0;
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 16px;
+      border: 8px solid $base;
+      border-radius: 50%;
+
+      &:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.32);
+        transition: all 0.16s ease;
+        cursor: pointer;
+      }
+    }
+
+    div {
+      text-align: left;
+
+      p {
+        color: $base;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 8px;
+        width: 100%;
+
+        @media (max-width: $mobile) {
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+
+  .Logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(80%, -50%);
+    background: $primary;
+    color: $base;
+    text-shadow: 4px 4px 0 $secondary;
+    font-size: 96px;
+    font-weight: 700;
+    padding: 0 8px;
+    border-radius: $border_radius_base;
+    cursor: pointer;
+  }
+}

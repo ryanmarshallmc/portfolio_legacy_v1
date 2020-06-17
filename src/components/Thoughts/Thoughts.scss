@@ -1,0 +1,69 @@
+@import "../../index.scss";
+
+.Thoughts {
+  text-align: left;
+  padding: 64px 16px;
+  animation: fade-in 1s forwards ease;
+
+  div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .Article {
+    width: 100%;
+    padding: 8px 16px 12px 16px;
+    margin: 8px 0;
+    background: #fff;
+    border-radius: 8px;
+    text-align: left;
+    font-family: "Charter";
+
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    img {
+      width: 48px;
+      margin-right: 8px;
+    }
+
+    h4 {
+      color: #000;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    h6 {
+      color: rgba(0, 0, 0, 0.64);
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    p {
+      line-height: 1.4;
+      color: rgba(0, 0, 0, 0.48);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+
+    button {
+      border: 0;
+      background: $background;
+      color: $text;
+      font-size: 12px;
+      margin: 8px;
+      padding: 8px 24px;
+    }
+  }
+}

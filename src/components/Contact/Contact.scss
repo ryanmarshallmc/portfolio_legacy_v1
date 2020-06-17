@@ -1,0 +1,160 @@
+@import "../../index.scss";
+
+#ContactContent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 32px;
+  z-index: 1;
+  animation: fade-in 1s ease 6.6s forwards;
+
+  @media (max-width: $mobile) {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    padding: 0 16px;
+  }
+
+  h1 {
+    color: $secondary;
+  }
+
+  .Blurb {
+    width: 24%;
+    padding: 8px 0;
+    @include flex-center;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+
+    img {
+      width: 96px;
+      height: 96px;
+      margin-right: 24px;
+      border-radius: 50%;
+      border: 8px solid $secondary;
+      flex-shrink: 0;
+
+      @media (max-width: $mobile) {
+        width: 64px;
+        height: 64px;
+        border: 4px solid $secondary;
+        margin-right: 16px;
+      }
+    }
+
+    > div {
+      @include flex-center;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      text-align: right;
+
+      @media (max-width: $mobile) {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      h4 {
+        color: $base;
+        text-shadow: 2px 2px 0 $secondary;
+        font-weight: 900;
+        margin: 0;
+
+        @media (max-width: $mobile) {
+          color: $primary;
+          text-shadow: 1px 1px 0 $secondary;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: 16px;
+        @media (max-width: $mobile) {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+#InputContainer {
+  position: absolute;
+  left: 164vw;
+  top: 32vh;
+  width: 48vw;
+  padding: 0 32px;
+
+  @media (max-width: $mobile) {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    padding: 0 16px 32px 16px;
+  }
+
+  #FormSubmit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    div {
+      color: red;
+      z-index: 1;
+    }
+    button {
+      z-index: 1;
+    }
+
+    button:disabled {
+      background: #c7cbdb;
+    }
+  }
+}
+
+#Contact {
+  @include flex-center;
+  flex-direction: column;
+  position: absolute;
+  background: $subtle;
+  top: 0;
+  left: 148vw;
+  height: 140vh;
+  border-radius: 50%;
+  margin-top: 64px;
+  opacity: 0;
+  animation: fade-in 1s ease 6.6s forwards;
+  box-shadow: 0 128px 128px 0 rgba(0, 0, 0, 0.64);
+
+  @media (max-width: $mobile) {
+    box-shadow: none;
+  }
+
+  .Logo {
+    position: absolute;
+    top: -48px;
+    left: 50%;
+    text-shadow: 4px 4px 0 $secondary;
+    transform: translateX(-50%);
+    background: $primary;
+    color: $base;
+    font-size: 96px;
+    font-weight: 700;
+    padding: 0 8px;
+    border-radius: $border_radius_base;
+  }
+}

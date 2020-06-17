@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { About, Main, Contact, Services, MobileHeader } from "./components";
+import {
+  disableScroll,
+  isMobile,
+  enableScroll,
+  handleScroll,
+} from "./util/scroll";
 
-function App() {
+export default function App() {
+  const [page, setPage] = useState("main");
+  const [x, setX] = useState(window.innerWidth);
+  const [y, setY] = useState(window.innerHeight);
+
+  useEffect(() => {
+    scroll(page);
+    !isMobile() ? disableScroll() : enableScroll();
+    window.addEventListener("resize", () => {
+      setX(window.innerWidth);
+      setY(window.innerHeight);
+    });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    !isMobile() &&
+      setTimeout(() => {
+        scroll(page);
+      }, 320);
+  }, [x, y]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function scroll(to) {
+    to && setPage(to);
+    handleScroll(to, x, y);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+      {isMobile() && <MobileHeader />}
+      <Main scroll={(to) => scroll(to)} />
+      <About scroll={(to) => scroll(to)} />
+      <Services scroll={(to) => scroll(to)} />
+      <Contact scroll={(to) => scroll(to)} />
     </div>
   );
 }
-
-export default App;

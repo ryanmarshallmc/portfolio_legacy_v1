@@ -1,0 +1,36 @@
+@import '../../index.scss';
+
+.Input {
+  position: relative;
+  width: 100%;
+  margin: 16px 0;
+  div {
+    position: absolute;
+    color: $secondary;
+    z-index: 2;
+    padding: 14px 16px;
+    font-size: 18px;
+    pointer-events: none;
+
+    &.focused {
+      padding: 6px 16px;
+      font-size: 10px;
+    }
+  }
+
+  input,
+  textarea {
+    position: relative;
+    border: 0;
+    border-radius: $border_radius_base;
+    padding: 20px 16px 8px 16px;
+    font-size: 18px;
+    color: $primary;
+    width: 100%;
+    background: $base;
+    z-index: 1;
+    @media (max-width: $mobile) {
+      background: $subtle;
+    }
+  }
+}
